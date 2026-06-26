@@ -1,4 +1,4 @@
-﻿<div class="home" @pageEnter>
+<div class="home" @pageEnter>
   <section id="hero" class="hero">
     <div class="hero__background" aria-hidden="true">
       <span></span>
@@ -13,7 +13,7 @@
       <p class="hero__summary" awpRevealOnScroll="0.1">{{ content.profile.summary[0] }}</p>
       <div class="hero__focus" awpRevealOnScroll="0.12">
         <span>Current focus</span>
-        <strong>Flutter • NestJS • Angular</strong>
+        <strong>{{ content.profile.rotatingSkills.join(' • ') }}</strong>
       </div>
       <div class="hero__actions" awpRevealOnScroll="0.15" aria-label="Primary actions">
         <a class="button button--primary awp-focus" href="#projects">
@@ -49,7 +49,14 @@
       <div class="constellation__orbit constellation__orbit--three"></div>
       <div class="constellation__center constellation__portrait"><img [src]="content.profile.pictureUrl" [alt]="content.profile.name" /></div>
       @for (tech of content.stack; track tech.name; let index = $index) {
-        <button class="constellation__node" [class]="'constellation__node constellation__node--' + index" type="button">
+        <button
+          class="constellation__node"
+          type="button"
+          [class.constellation__node--0]="index === 0"
+          [class.constellation__node--1]="index === 1"
+          [class.constellation__node--2]="index === 2"
+          [class.constellation__node--3]="index === 3"
+        >
           <strong>{{ tech.name }}</strong>
           <span>{{ tech.items[0] }}</span>
         </button>
@@ -102,7 +109,16 @@
     <div class="project-slider" awpRevealOnScroll>
       <div class="project-slider__visual">
         @if (activeProject().videoUrl; as videoUrl) {
-          <video class="project-slider__video" [class.project-slider__video--mobile]="activeProject().mediaLayout === 'mobile'" [class.project-slider__video--desktop]="activeProject().mediaLayout === 'desktop'" [src]="videoUrl" controls muted loop playsinline preload="metadata"></video>
+          <video
+            class="project-slider__video"
+            controls
+            loop
+            muted
+            playsinline
+            preload="metadata"
+            [class.project-slider__video--mobile]="activeProject().mediaLayout === 'mobile'"
+            [src]="videoUrl"
+          ></video>
         } @else {
           <div class="project-slider__placeholder">
             <svg lucideLayers3 [size]="54"></svg>
@@ -113,11 +129,11 @@
       <div class="project-slider__content">
         <p class="project-slider__kicker">Featured project</p>
         <h3>{{ activeProject().name }}</h3>
-        <p>{{ activeProject().problem }}</p>
+        <p>{{ activeProject().summary }}</p>
         <dl>
           <div>
             <dt>Role</dt>
-            <dd>{{ activeProject().architecture }}</dd>
+            <dd>{{ activeProject().role }}</dd>
           </div>
           <div>
             <dt>Tech</dt>
@@ -125,7 +141,7 @@
           </div>
           <div>
             <dt>Result</dt>
-            <dd>{{ activeProject().outcome }}</dd>
+            <dd>{{ activeProject().result }}</dd>
           </div>
         </dl>
         <div class="project-slider__controls">
@@ -134,7 +150,12 @@
           </button>
           <div class="project-slider__dots" aria-label="Project selector">
             @for (project of content.projects; track project.name; let index = $index) {
-              <button type="button" [class.is-active]="index === activeProjectIndex()" (click)="selectProject(index)" [attr.aria-label]="'Show ' + project.name"></button>
+              <button
+                type="button"
+                [class.is-active]="index === activeProjectIndex()"
+                [attr.aria-label]="'Show ' + project.name"
+                (click)="selectProject(index)"
+              ></button>
             }
           </div>
           <button class="icon-button awp-focus" type="button" (click)="nextProject()" aria-label="Next project">
@@ -150,7 +171,13 @@
     <h2 class="font-display">Open to software engineering opportunities.</h2>
     <div class="contact-cta__actions">
       @for (action of content.contactActions; track action.label) {
-        <a class="button awp-focus" [href]="action.href" [attr.download]="action.icon === 'download' ? '' : null" [attr.target]="action.icon === 'github' || action.icon === 'linkedin' ? '_blank' : null" [attr.rel]="action.icon === 'github' || action.icon === 'linkedin' ? 'noopener noreferrer' : null">
+        <a
+          class="button awp-focus"
+          [href]="action.href"
+          [attr.download]="action.icon === 'download' ? '' : null"
+          [attr.target]="action.icon === 'github' || action.icon === 'linkedin' ? '_blank' : null"
+          [attr.rel]="action.icon === 'github' || action.icon === 'linkedin' ? 'noopener noreferrer' : null"
+        >
           @switch (action.icon) {
             @case ('download') {
               <svg lucideDownload [size]="18"></svg>

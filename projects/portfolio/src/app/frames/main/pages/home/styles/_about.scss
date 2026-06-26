@@ -1,0 +1,31 @@
+.about-split {
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.7fr);
+  gap: 56px;
+}
+
+.about-split > p {
+  margin: 0;
+  color: var(--awp-soft-text);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  line-height: 1.75;
+}
+
+.about-highlights {
+  display: grid;
+  gap: 18px;
+}
+
+.about-highlight {
+  display: grid;
+  gap: 6px;
+  padding: 0 0 18px 22px;
+  border-left: 1px solid var(--awp-border);
+  animation: soft-float 6s ease-in-out infinite;
+}
+
+.about-highlight strong {
+  color: var(--awp-text);
+  font-size: 1.08rem;
+}

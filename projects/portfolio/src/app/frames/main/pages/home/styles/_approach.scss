@@ -1,0 +1,74 @@
+.journey {
+  --node-size: 46px;
+  --line-inset: calc((100% / 8) - (var(--node-size) / 2));
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.journey::before,
+.journey::after {
+  position: absolute;
+  top: calc(var(--node-size) / 2);
+  right: var(--line-inset);
+  left: var(--line-inset);
+  height: 1px;
+  content: '';
+  transform-origin: left center;
+}
+
+.journey::before {
+  background: var(--awp-border);
+}
+
+.journey::after {
+  background: linear-gradient(90deg, var(--awp-primary), var(--awp-success));
+  animation: line-grow 1.1s ease both;
+}
+
+.journey__step {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  padding-top: 64px;
+  text-align: center;
+}
+
+.journey__step span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  width: var(--node-size);
+  height: var(--node-size);
+  transform: translateX(-50%);
+  place-items: center;
+  border: 1px solid var(--awp-border);
+  border-radius: 50%;
+  background: var(--awp-surface);
+  color: var(--awp-primary);
+  font-weight: 800;
+}
+
+.journey__step:first-child span {
+  animation: node-pulse 2.4s ease-in-out infinite;
+}
+
+.journey__step small {
+  display: inline-flex;
+  margin: 0 0 10px;
+  color: var(--awp-success);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.journey__step h3,
+.timeline__content h3,
+.project-slider h3 {
+  margin: 0 0 8px;
+  color: var(--awp-text);
+}

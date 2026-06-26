@@ -20,17 +20,14 @@ export const portfolioContent: PortfolioContent = {
   metrics: [
     {
       label: 'Backend',
-      value: 'NestJS',
       detail: 'Backend services organized around clear modules and request flows.'
     },
     {
       label: 'Flutter',
-      value: 'Mobile',
       detail: 'Mobile applications with reusable UI systems and connected workflows.'
     },
     {
       label: 'Delivery',
-      value: 'Ship',
       detail: 'Testing, release work, and product details that make features usable.'
     }
   ],
@@ -77,45 +74,30 @@ export const portfolioContent: PortfolioContent = {
   projects: [
     {
       name: 'Yalla Farha Mobile App',
-      problem: 'Event-based gift management mobile application published on the App Store and Google Play.',
-      architecture: 'Full-stack developer',
-      responsibilities: [
-        'Developed Flutter mobile flows connected to REST APIs.',
-        'Worked on UML analysis, endpoint testing with Postman, and mobile release automation with Fastlane.',
-        'Improved the NestJS backend structure with modules, guards, interceptors, pipes, filters, decorators, middleware, and centralized configuration.'
-      ],
+      summary: 'Event-based gift management mobile application published on the App Store and Google Play.',
+      role: 'Full-stack developer',
       stack: ['Flutter', 'NestJS'],
-      outcome: 'A published mobile app with reusable Flutter UI foundations and a stronger backend structure.',
+      result: 'A published mobile app with reusable Flutter UI foundations and a stronger backend structure.',
       videoUrl: 'assets/videos/yf_demo.mp4',
       mediaLayout: 'mobile'
     },
     {
       name: 'Yalla Farha Web App',
-      problem: 'Web version of the Yalla Farha gift management product, built with Flutter and covering the same core workflows.',
-      architecture: 'Full-stack developer',
-      responsibilities: [
-        'Developed Flutter web interfaces for the gift management experience.',
-        'Connected the web app to REST APIs and supported endpoint validation with Postman.',
-        'Shared UI patterns and styling decisions with the mobile application for a consistent product experience.'
-      ],
+      summary: 'Web version of the Yalla Farha gift management product, built with Flutter and covering the same core workflows.',
+      role: 'Full-stack developer',
       stack: ['Flutter', 'NestJS'],
-      outcome: 'A Flutter web app with the same product functionality available outside the mobile stores.',
-      videoUrl: 'assets/videos/yf-web.mp4',
-      mediaLayout: 'desktop'
+      result: 'A Flutter web app with the same product functionality available outside the mobile stores.',
+      videoUrl: 'assets/videos/yf-web.mp4'
     },
     {
       name: 'NewCV',
-      problem: 'Employment support and recruitment platform with admin and client interfaces.',
-      architecture: 'Front-end developer',
-      responsibilities: [
-        'Developed Angular interfaces for admin and client workflows.',
-        'Wrote detailed functional specifications for each interface.',
-        'Worked with ClickUp for task management and GitLab for source control.'
-      ],
+      summary: 'Employment support and recruitment platform with admin and client interfaces.',
+      role: 'Front-end developer',
       stack: ['Angular', 'PrimeNG'],
-      outcome: 'A recruitment platform interface built around documented product screens and managed delivery workflow.'
+      result: 'A recruitment platform interface built around documented product screens and managed delivery workflow.'
     }
-  ],  education: [
+  ],
+  education: [
     {
       degree: 'State Engineer in Computer and Network Engineering',
       institution: 'Moroccan School of Engineering Sciences',

@@ -14,7 +14,6 @@ export interface PortfolioProfile {
 
 export interface PortfolioMetric {
   readonly label: string;
-  readonly value: string;
   readonly detail: string;
 }
 
@@ -27,13 +26,12 @@ export interface ExperienceItem {
 
 export interface ProjectItem {
   readonly name: string;
-  readonly problem: string;
-  readonly architecture: string;
-  readonly responsibilities: readonly string[];
+  readonly summary: string;
+  readonly role: string;
   readonly stack: readonly string[];
-  readonly outcome: string;
+  readonly result: string;
   readonly videoUrl?: string;
-  readonly mediaLayout?: 'mobile' | 'desktop';
+  readonly mediaLayout?: 'mobile';
 }
 
 export interface EducationItem {

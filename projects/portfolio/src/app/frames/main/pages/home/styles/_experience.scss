@@ -1,0 +1,56 @@
+.timeline--open {
+  position: relative;
+  display: grid;
+  gap: 34px;
+  padding-left: 22px;
+}
+
+.timeline--open::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 4px;
+  width: 1px;
+  content: '';
+  background: linear-gradient(to bottom, var(--awp-primary), var(--awp-accent), transparent);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(170px, 0.35fr) minmax(0, 1fr);
+  gap: 28px;
+}
+
+.timeline__dot {
+  position: absolute;
+  top: 5px;
+  left: -23px;
+  width: 11px;
+  height: 11px;
+  border: 2px solid var(--awp-bg);
+  border-radius: 50%;
+  background: var(--awp-primary);
+}
+
+.timeline__meta {
+  display: grid;
+  align-content: start;
+  gap: 6px;
+}
+
+.timeline__meta strong {
+  color: var(--awp-text);
+}
+
+.timeline__meta span {
+  color: var(--awp-muted);
+  font-size: 0.9rem;
+}
+
+.timeline__content ul {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding-left: 18px;
+}

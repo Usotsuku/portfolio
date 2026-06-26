@@ -1,0 +1,81 @@
+.home {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__content,
+.contact-cta {
+  position: relative;
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero__role,
+.contact-cta > p {
+  margin: 0 0 18px;
+  color: var(--awp-success);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero__actions,
+.contact-cta__actions,
+.project-slider__controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button,
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  gap: 9px;
+  padding: 0 18px;
+  border: 1px solid var(--awp-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--awp-surface) 84%, transparent);
+  color: var(--awp-text);
+  font-size: 0.94rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.icon-button {
+  width: 44px;
+  padding: 0;
+}
+
+.button:hover,
+.icon-button:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--awp-primary) 52%, transparent);
+}
+
+.button--primary {
+  border-color: color-mix(in srgb, var(--awp-primary) 55%, transparent);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--awp-primary) 92%, transparent), #2563eb);
+  color: #fff;
+  box-shadow: 0 18px 44px color-mix(in srgb, var(--awp-primary) 22%, transparent);
+}
+
+.about-highlight span,
+.constellation__footer,
+.timeline__item p,
+.timeline__item li,
+.project-slider p,
+.project-slider dd,
+.journey__step p,
+.contact-cta p:not(:first-child) {
+  color: var(--awp-muted);
+  line-height: 1.65;
+}

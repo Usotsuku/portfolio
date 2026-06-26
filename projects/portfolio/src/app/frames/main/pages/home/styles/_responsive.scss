@@ -1,0 +1,130 @@
+@media (max-width: 980px) {
+  .about-split,
+  .journey,
+  .timeline__item,
+  .project-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .journey::before,
+  .journey::after {
+    top: calc(var(--node-size) / 2);
+    right: auto;
+    bottom: calc(var(--node-size) / 2);
+    left: calc(var(--node-size) / 2);
+    width: 1px;
+    height: auto;
+    transform-origin: top center;
+  }
+
+  .journey::after {
+    animation-name: line-grow-vertical;
+  }
+
+  .journey__step {
+    justify-items: start;
+    min-height: 132px;
+    padding-top: 0;
+    padding-left: 72px;
+    text-align: left;
+  }
+
+  .journey__step span {
+    left: 0;
+    transform: none;
+  }
+
+  .project-slider__visual,
+  .project-slider__video,
+  .project-slider__placeholder {
+    min-height: 300px;
+  }
+  .project-slider__video--mobile {
+    width: min(58%, 220px);
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 170px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 18vw, 4.8rem);
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .constellation {
+    aspect-ratio: auto;
+    display: grid;
+    gap: 14px;
+    min-height: auto;
+  }
+
+  .constellation__orbit,
+  .constellation__center,
+  .constellation__node,
+  .constellation__node--0,
+  .constellation__node--1,
+  .constellation__node--2,
+  .constellation__node--3 {
+    position: relative;
+    inset: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    min-height: auto;
+    transform: none;
+  }
+
+  .constellation__orbit {
+    display: none;
+  }
+
+  .constellation__center,
+  .constellation__node {
+    padding: 18px;
+    border-radius: 8px;
+  }
+
+  .constellation__portrait {
+    display: none;
+  }
+
+  .constellation__node {
+    pointer-events: none;
+  }
+
+  .constellation__node:hover,
+  .constellation__node:focus-visible,
+  .constellation__node--0:hover,
+  .constellation__node--2:hover,
+  .constellation__node--0:focus-visible,
+  .constellation__node--2:focus-visible {
+    transform: none;
+    border-color: var(--awp-border);
+  }
+
+  .constellation__footer {
+    margin-top: 30px;
+  }
+
+  .constellation__node span,
+  .constellation__node:hover span,
+  .constellation__node:focus-visible span {
+    position: static;
+    width: auto;
+    margin-top: 8px;
+    padding: 0;
+    transform: none;
+    border: 0;
+    background: transparent;
+    opacity: 1;
+  }
+}
