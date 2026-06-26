@@ -1,0 +1,176 @@
+﻿<div class="home" @pageEnter>
+  <section id="hero" class="hero">
+    <div class="hero__background" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__role" awpRevealOnScroll>{{ content.profile.title }}</p>
+      <h1 class="font-display" awpRevealOnScroll="0.05">{{ content.profile.name }}</h1>
+      <p class="hero__summary" awpRevealOnScroll="0.1">{{ content.profile.summary[0] }}</p>
+      <div class="hero__focus" awpRevealOnScroll="0.12">
+        <span>Current focus</span>
+        <strong>Flutter • NestJS • Angular</strong>
+      </div>
+      <div class="hero__actions" awpRevealOnScroll="0.15" aria-label="Primary actions">
+        <a class="button button--primary awp-focus" href="#projects">
+          View Projects
+          <svg lucideArrowRight [size]="18"></svg>
+        </a>
+        <a class="button awp-focus" [href]="content.profile.cvUrl" download>
+          <svg lucideDownload [size]="18"></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <awp-section-shell id="about" eyebrow="ABOUT" title="How I work">
+    <div class="about-split" awpRevealOnScroll>
+      <p>{{ content.profile.summary[1] }}</p>
+      <div class="about-highlights" aria-label="Engineering highlights">
+        @for (metric of content.metrics; track metric.label; let index = $index) {
+          <div class="about-highlight" [style.animation-delay.ms]="index * 140">
+            <strong>{{ metric.label }}</strong>
+            <span>{{ metric.detail }}</span>
+          </div>
+        }
+      </div>
+    </div>
+  </awp-section-shell>
+
+  <awp-section-shell id="stack" eyebrow="STACK" title="Technology Constellation">
+    <div class="constellation" awpRevealOnScroll>
+      <div class="constellation__orbit constellation__orbit--one"></div>
+      <div class="constellation__orbit constellation__orbit--two"></div>
+      <div class="constellation__orbit constellation__orbit--three"></div>
+      <div class="constellation__center constellation__portrait"><img [src]="content.profile.pictureUrl" [alt]="content.profile.name" /></div>
+      @for (tech of content.stack; track tech.name; let index = $index) {
+        <button class="constellation__node" [class]="'constellation__node constellation__node--' + index" type="button">
+          <strong>{{ tech.name }}</strong>
+          <span>{{ tech.items[0] }}</span>
+        </button>
+      }
+    </div>
+    <p class="constellation__footer">Additional experience across .NET, React, and Django.</p>
+  </awp-section-shell>
+
+  <awp-section-shell id="work" eyebrow="APPROACH" title="From idea to release">
+    <div class="journey" awpRevealOnScroll>
+      @for (step of content.principles; track step.title; let index = $index) {
+        <div class="journey__step">
+          <span>0{{ index + 1 }}</span>
+          <h3>{{ step.title }}</h3>
+          @switch (index) {
+            @case (0) { <small>Analysis</small> }
+            @case (1) { <small>Conception • Modeling</small> }
+            @case (2) { <small>Development</small> }
+            @default { <small>Implementation</small> }
+          }
+          <p>{{ step.description }}</p>
+        </div>
+      }
+    </div>
+  </awp-section-shell>
+
+  <awp-section-shell id="experience" eyebrow="EXPERIENCE" title="Career">
+    <div class="timeline timeline--open">
+      @for (item of content.experience; track item.company + item.duration) {
+        <article class="timeline__item" awpRevealOnScroll>
+          <span class="timeline__dot"></span>
+          <div class="timeline__meta">
+            <strong>{{ item.company }}</strong>
+            <span>{{ item.duration }}</span>
+          </div>
+          <div class="timeline__content">
+            <h3>{{ item.role }}</h3>
+            <ul>
+              @for (highlight of item.highlights.slice(0, 3); track highlight) {
+                <li>{{ highlight }}</li>
+              }
+            </ul>
+          </div>
+        </article>
+      }
+    </div>
+  </awp-section-shell>
+
+  <awp-section-shell id="projects" eyebrow="PROJECTS" title="Selected work">
+    <div class="project-slider" awpRevealOnScroll>
+      <div class="project-slider__visual">
+        @if (activeProject().videoUrl; as videoUrl) {
+          <video class="project-slider__video" [class.project-slider__video--mobile]="activeProject().mediaLayout === 'mobile'" [class.project-slider__video--desktop]="activeProject().mediaLayout === 'desktop'" [src]="videoUrl" controls muted loop playsinline preload="metadata"></video>
+        } @else {
+          <div class="project-slider__placeholder">
+            <svg lucideLayers3 [size]="54"></svg>
+            <span>{{ activeProject().name }}</span>
+          </div>
+        }
+      </div>
+      <div class="project-slider__content">
+        <p class="project-slider__kicker">Featured project</p>
+        <h3>{{ activeProject().name }}</h3>
+        <p>{{ activeProject().problem }}</p>
+        <dl>
+          <div>
+            <dt>Role</dt>
+            <dd>{{ activeProject().architecture }}</dd>
+          </div>
+          <div>
+            <dt>Tech</dt>
+            <dd>{{ activeProject().stack.join(', ') }}</dd>
+          </div>
+          <div>
+            <dt>Result</dt>
+            <dd>{{ activeProject().outcome }}</dd>
+          </div>
+        </dl>
+        <div class="project-slider__controls">
+          <button class="icon-button awp-focus" type="button" (click)="previousProject()" aria-label="Previous project">
+            <svg lucideArrowLeft [size]="18"></svg>
+          </button>
+          <div class="project-slider__dots" aria-label="Project selector">
+            @for (project of content.projects; track project.name; let index = $index) {
+              <button type="button" [class.is-active]="index === activeProjectIndex()" (click)="selectProject(index)" [attr.aria-label]="'Show ' + project.name"></button>
+            }
+          </div>
+          <button class="icon-button awp-focus" type="button" (click)="nextProject()" aria-label="Next project">
+            <svg lucideArrowRight [size]="18"></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </awp-section-shell>
+
+  <section id="contact" class="contact-cta" awpRevealOnScroll>
+    <p>CONTACT</p>
+    <h2 class="font-display">Open to software engineering opportunities.</h2>
+    <div class="contact-cta__actions">
+      @for (action of content.contactActions; track action.label) {
+        <a class="button awp-focus" [href]="action.href" [attr.download]="action.icon === 'download' ? '' : null" [attr.target]="action.icon === 'github' || action.icon === 'linkedin' ? '_blank' : null" [attr.rel]="action.icon === 'github' || action.icon === 'linkedin' ? 'noopener noreferrer' : null">
+          @switch (action.icon) {
+            @case ('download') {
+              <svg lucideDownload [size]="18"></svg>
+            }
+            @case ('github') {
+              <svg lucideCode2 [size]="18"></svg>
+            }
+            @case ('linkedin') {
+              <svg lucideNetwork [size]="18"></svg>
+            }
+            @default {
+              <svg lucideMail [size]="18"></svg>
+            }
+          }
+          {{ action.label }}
+        </a>
+      }
+    </div>
+  </section>
+</div>
+
+
+

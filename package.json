@@ -1,0 +1,46 @@
+{
+  "name": "aymane-wakach-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "ng serve portfolio",
+    "build": "ng build portfolio",
+    "build:prod": "ng build portfolio --configuration=production",
+    "watch": "ng build portfolio --watch --configuration development",
+    "lint": "ng lint portfolio"
+  },
+  "dependencies": {
+    "@angular/animations": "^21.2.0",
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/platform-browser-dynamic": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "@fontsource/inter": "^5.2.6",
+    "@fontsource/space-grotesk": "^5.2.6",
+    "gsap": "^3.13.0",
+    "lenis": "^1.3.11",
+    "@lucide/angular": "^1.21.0",
+    "motion": "^12.23.24",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "^0.15.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^21.2.0",
+    "@angular/cli": "^21.2.0",
+    "@angular/compiler-cli": "^21.2.0",
+    "@eslint/js": "^9.29.0",
+    "@tailwindcss/postcss": "^4.1.10",
+    "angular-eslint": "^20.1.1",
+    "eslint": "^9.29.0",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-attributes": "^1.0.0",
+    "tailwindcss": "^4.1.10",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.34.1"
+  }
+}

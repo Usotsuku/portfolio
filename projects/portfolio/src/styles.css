@@ -1,0 +1,120 @@
+﻿@import 'tailwindcss';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/space-grotesk/500.css';
+@import '@fontsource/space-grotesk/700.css';
+
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --awp-bg: #09090b;
+  --awp-surface: #111827;
+  --awp-surface-soft: #0f172a;
+  --awp-border: rgba(148, 163, 184, 0.18);
+  --awp-primary: #3b82f6;
+  --awp-accent: #8b5cf6;
+  --awp-success: #22c55e;
+  --awp-text: #f8fafc;
+  --awp-muted: #94a3b8;
+  --awp-soft-text: #cbd5e1;
+  --awp-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+  --awp-topbar: rgba(9, 9, 11, 0.76);
+  --awp-hero-aura: rgba(59, 130, 246, 0.14);
+  --awp-hero-aura-2: rgba(34, 197, 94, 0.08);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --awp-bg: #fafafa;
+  --awp-surface: #ffffff;
+  --awp-surface-soft: #f4f7fb;
+  --awp-border: rgba(15, 23, 42, 0.14);
+  --awp-primary: #2563eb;
+  --awp-accent: #7c3aed;
+  --awp-success: #16a34a;
+  --awp-text: #0f172a;
+  --awp-muted: #64748b;
+  --awp-soft-text: #334155;
+  --awp-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+  --awp-topbar: rgba(255, 255, 255, 0.78);
+  --awp-hero-aura: rgba(37, 99, 235, 0.12);
+  --awp-hero-aura-2: rgba(22, 163, 74, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--awp-bg);
+  scroll-behavior: smooth;
+  transition:
+    background 260ms ease,
+    color 260ms ease;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 10%, var(--awp-hero-aura), transparent 34rem),
+    radial-gradient(circle at 88% 4%, var(--awp-hero-aura-2), transparent 28rem),
+    var(--awp-bg);
+  color: var(--awp-text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  transition:
+    background 260ms ease,
+    color 260ms ease;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+}
+
+.font-display {
+  font-family: 'Space Grotesk', Inter, sans-serif;
+}
+
+.awp-focus {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+}
+
+.awp-focus:focus-visible {
+  outline-color: var(--awp-primary);
+}
+
+.reveal-ready {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-ready {
+    opacity: 1;
+    transform: none;
+  }
+}

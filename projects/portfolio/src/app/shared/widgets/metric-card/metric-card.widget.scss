@@ -1,0 +1,31 @@
+.metric-card {
+  min-height: 150px;
+  padding: 22px;
+  border: 1px solid var(--awp-border);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(17, 24, 39, 0.92), rgba(15, 23, 42, 0.68));
+  box-shadow: var(--awp-shadow);
+}
+
+.metric-card__value {
+  display: block;
+  color: var(--awp-text);
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.metric-card__label {
+  display: block;
+  margin-top: 12px;
+  color: var(--awp-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 12px 0 0;
+  color: var(--awp-muted);
+  line-height: 1.65;
+}

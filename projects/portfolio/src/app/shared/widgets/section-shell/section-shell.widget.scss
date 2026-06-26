@@ -1,0 +1,35 @@
+.section-shell {
+  position: relative;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 96px 0;
+}
+
+.section-shell__header {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.section-shell__eyebrow {
+  margin: 0 0 10px;
+  color: var(--awp-success);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.section-shell__title {
+  margin: 0;
+  color: var(--awp-text);
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  line-height: 0.96;
+}
+
+.section-shell__description {
+  max-width: 680px;
+  margin: 18px 0 0;
+  color: var(--awp-muted);
+  font-size: clamp(1rem, 1.5vw, 1.13rem);
+  line-height: 1.75;
+}

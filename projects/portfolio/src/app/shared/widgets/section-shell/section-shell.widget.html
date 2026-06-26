@@ -1,0 +1,10 @@
+<section class="section-shell">
+  <div class="section-shell__header">
+    <p class="section-shell__eyebrow">{{ eyebrow() }}</p>
+    <h2 class="font-display section-shell__title">{{ title() }}</h2>
+    @if (description(); as copy) {
+      <p class="section-shell__description">{{ copy }}</p>
+    }
+  </div>
+  <ng-content />
+</section>
