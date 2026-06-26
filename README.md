@@ -1,53 +1,157 @@
-# Aymane Wakach Portfolio
+# Aymane Wakach — Portfolio
 
-Production-oriented Angular portfolio generated outside the `yalla-farha-v2` codebase while following the admin workspace philosophy:
+Personal portfolio built to showcase my experience, projects, and approach to building software products.
 
-- Angular standalone components.
-- `projects/portfolio/src/app` application boundary.
-- `frames/main` layout organization.
-- `config`-driven content and theme settings.
-- Shared models, services, directives, and widgets.
-- Lazy route loading.
-- TailwindCSS global design tokens.
-- GSAP, Motion One, Angular animations, and Lenis with reduced-motion guards.
-- Docker and CI preparation.
+Live website available through deployment.
 
-## Important CV Note
+---
 
-The attached CV PDF is image-based. Automated text extraction was not available locally, so the portfolio does not invent work history or projects. Verified data belongs in:
+## Overview
 
-```ts
-projects/portfolio/src/app/config/portfolio.config.ts
+This portfolio presents:
+
+* Professional experience
+* Selected projects
+* Engineering approach
+* Technology focus
+* Project demos
+* Contact and collaboration information
+
+Built with attention to maintainability, performance, accessibility, and long-term scalability.
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* Angular (Standalone Components)
+* TypeScript
+* TailwindCSS
+
+### Motion & Interaction
+
+* GSAP
+* Motion One
+* Angular Animations
+* Lenis Smooth Scroll
+
+### Architecture
+
+* Feature-oriented structure
+* Shared UI primitives
+* Config-driven content
+* Lazy loading
+* SSR-ready rendering
+* Reusable component patterns
+
+### Deployment
+
+* Vercel
+* Docker-ready setup
+
+---
+
+## Project Structure
+
+```text
+projects/
+└── portfolio/
+    ├── src/
+    │   ├── app/
+    │   │   ├── config/
+    │   │   ├── core/
+    │   │   ├── features/
+    │   │   ├── frames/
+    │   │   ├── shared/
+    │   │   └── widgets/
+    │   ├── assets/
+    │   └── environments/
 ```
 
-Update `email`, `githubUrl`, `linkedinUrl`, `experience`, and `projects` once OCR or a text CV is available.
+Structure is organized around separation of concerns and reusable feature boundaries.
 
-## Commands
+---
+
+## Local Development
+
+Install dependencies:
 
 ```bash
 npm install
-npm start
-npm run build:prod
-npm run lint
 ```
 
-The local dev server runs on `http://localhost:4202`.
+Start development server:
 
-## Deployment
+```bash
+npm start
+```
 
-Build the production bundle:
+Application:
+
+```text
+http://localhost:4202
+```
+
+---
+
+## Production Build
+
+Generate production output:
 
 ```bash
 npm run build:prod
 ```
 
-The browser output is generated under `dist/portfolio/browser`.
+Build artifacts:
+
+```text
+dist/portfolio/browser
+```
+
+Preview locally:
+
+```bash
+serve -s dist/portfolio/browser
+```
+
+---
 
 ## Docker
 
+Build:
+
 ```bash
-docker build -t aymane-portfolio .
-docker run --rm -p 8080:80 aymane-portfolio
+docker build -t portfolio .
 ```
 
-Then open `http://localhost:8080`.
+Run:
+
+```bash
+docker run --rm -p 8080:80 portfolio
+```
+
+Open:
+
+```text
+http://localhost:8080
+```
+
+---
+
+## Deployment
+
+Production deployment is handled through Vercel.
+
+Every push to the main branch automatically triggers a new deployment.
+
+---
+
+## Contact
+
+Aymane Wakach
+Software Engineer
+
+Email: [aymen.wakach@gmail.com](mailto:aymen.wakach@gmail.com)
+
+LinkedIn and GitHub are available directly through the portfolio website.
