@@ -6,11 +6,3 @@
 /coverage
 .env
 *.log
-# Videos
-/projects/portfolio/src/assets/videos/
-*.mp4
-# Optional media
-*.mp4
-*.mov
-*.avi
-*.webm
