@@ -1,0 +1,46 @@
+.skeleton-video {
+  position: relative;
+  display: grid;
+  min-height: 430px;
+  place-items: center;
+  background: #000;
+  overflow: hidden;
+}
+
+.skeleton-video awp-skeleton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.skeleton-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  transition: opacity 340ms ease;
+}
+
+.skeleton-video--mobile video {
+  width: min(44%, 260px);
+  min-width: 190px;
+  height: auto;
+  min-height: 0;
+  max-height: calc(100% - 44px);
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+@media (max-width: 980px) {
+  .skeleton-video,
+  .skeleton-video video {
+    min-height: 300px;
+  }
+
+  .skeleton-video--mobile video {
+    width: min(58%, 220px);
+    min-width: 150px;
+  }
+}

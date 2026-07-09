@@ -1,0 +1,32 @@
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--awp-muted) 10%, transparent) 0%,
+    color-mix(in srgb, var(--awp-muted) 18%, transparent) 50%,
+    color-mix(in srgb, var(--awp-muted) 10%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.skeleton--circle {
+  border-radius: 50%;
+}
+
+.skeleton--text {
+  height: 1em;
+  border-radius: 3px;
+  transform: translateY(0.25em);
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}

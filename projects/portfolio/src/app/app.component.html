@@ -1,0 +1,31 @@
+@if (isNavigating()) {
+  <div class="root-skeleton" aria-hidden="true">
+    <div class="root-skeleton__topbar">
+      <div class="root-skeleton__brand">
+        <awp-skeleton shape="circle" width="38px" height="38px" />
+        <awp-skeleton shape="text" width="140px" height="14px" borderRadius="4px" />
+      </div>
+      <div class="root-skeleton__nav">
+        <awp-skeleton shape="rect" width="54px" height="36px" borderRadius="7px" />
+        <awp-skeleton shape="rect" width="48px" height="36px" borderRadius="7px" />
+        <awp-skeleton shape="rect" width="70px" height="36px" borderRadius="7px" />
+        <awp-skeleton shape="rect" width="56px" height="36px" borderRadius="7px" />
+        <awp-skeleton shape="rect" width="66px" height="36px" borderRadius="7px" />
+        <awp-skeleton shape="rect" width="66px" height="36px" borderRadius="7px" />
+        <awp-skeleton shape="circle" width="40px" height="40px" />
+      </div>
+    </div>
+
+    <div class="root-skeleton__hero">
+      <awp-skeleton shape="text" width="120px" height="12px" borderRadius="3px" />
+      <awp-skeleton shape="text" width="min(560px, 70vw)" height="clamp(3.2rem, 10vw, 8rem)" borderRadius="12px" />
+      <awp-skeleton shape="text" width="min(480px, 60vw)" height="18px" borderRadius="4px" />
+      <awp-skeleton shape="text" width="min(360px, 45vw)" height="18px" borderRadius="4px" />
+      <div class="root-skeleton__actions">
+        <awp-skeleton shape="rect" width="160px" height="46px" borderRadius="8px" />
+        <awp-skeleton shape="rect" width="150px" height="46px" borderRadius="8px" />
+      </div>
+    </div>
+  </div>
+}
+<router-outlet />

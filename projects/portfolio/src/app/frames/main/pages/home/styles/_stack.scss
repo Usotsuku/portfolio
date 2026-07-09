@@ -10,18 +10,14 @@
   inset: 12%;
   border: 1px solid var(--awp-border);
   border-radius: 50%;
-  animation: orbit-scan 28s linear infinite;
 }
 
 .constellation__orbit--two {
   inset: 22%;
-  animation-duration: 22s;
-  animation-direction: reverse;
 }
 
 .constellation__orbit--three {
   inset: 33%;
-  animation-duration: 16s;
 }
 
 .constellation__center,

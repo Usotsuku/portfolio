@@ -54,7 +54,6 @@
 html {
   min-height: 100%;
   background: var(--awp-bg);
-  scroll-behavior: smooth;
   transition:
     background 260ms ease,
     color 260ms ease;
@@ -70,9 +69,6 @@ body {
     var(--awp-bg);
   color: var(--awp-text);
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  transition:
-    background 260ms ease,
-    color 260ms ease;
 }
 
 button,

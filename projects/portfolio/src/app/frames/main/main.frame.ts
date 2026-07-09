@@ -2,13 +2,14 @@
 import { RouterOutlet } from '@angular/router';
 import { LucideMoon, LucideSun } from '@lucide/angular';
 import { CursorOrbitService, MotionPreferencesService, SmoothScrollService, ThemeService } from '@services/index';
+import { SkeletonImageWidget } from '@widgets/skeleton-image';
 import { portfolioContent } from '@config/portfolio.config';
 import { mainNavigationItems } from './main.config';
 
 @Component({
   selector: 'awp-main',
   standalone: true,
-  imports: [RouterOutlet, LucideMoon, LucideSun],
+  imports: [RouterOutlet, LucideMoon, LucideSun, SkeletonImageWidget],
   templateUrl: './main.frame.html',
   styleUrl: './main.frame.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

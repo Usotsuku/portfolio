@@ -1,5 +1,7 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Injectable, NgZone, PLATFORM_ID, inject } from '@angular/core';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { MotionPreferencesService } from './motion-preferences.service';
 
@@ -17,18 +19,17 @@ export class SmoothScrollService {
     }
 
     this._zone.runOutsideAngular(() => {
+      gsap.registerPlugin(ScrollTrigger);
+
       this._lenis = new Lenis({
         duration: 1.05,
         easing: (value: number) => Math.min(1, 1.001 - Math.pow(2, -10 * value)),
         smoothWheel: true
       });
 
-      const raf = (time: number): void => {
-        this._lenis?.raf(time);
-        this._document.defaultView?.requestAnimationFrame(raf);
-      };
-
-      this._document.defaultView?.requestAnimationFrame(raf);
+      this._lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => this._lenis?.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
     });
   }
 }

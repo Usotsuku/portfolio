@@ -35,13 +35,8 @@
   }
 
   .project-slider__visual,
-  .project-slider__video,
   .project-slider__placeholder {
     min-height: 300px;
-  }
-  .project-slider__video--mobile {
-    width: min(58%, 220px);
-    min-width: 150px;
   }
 }
 

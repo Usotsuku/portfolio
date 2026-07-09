@@ -11,6 +11,8 @@ import {
 } from '@lucide/angular';
 import { portfolioContent } from '@config/portfolio.config';
 import { RevealOnScrollDirective } from '@directives/index';
+import { SkeletonImageWidget } from '@widgets/skeleton-image';
+import { SkeletonVideoWidget } from '@widgets/skeleton-video';
 import { SectionShellWidget } from '@widgets/section-shell';
 
 @Component({
@@ -25,6 +27,8 @@ import { SectionShellWidget } from '@widgets/section-shell';
     LucideMail,
     LucideNetwork,
     RevealOnScrollDirective,
+    SkeletonImageWidget,
+    SkeletonVideoWidget,
     SectionShellWidget
   ],
   templateUrl: './home.page.html',
