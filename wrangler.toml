@@ -1,0 +1,5 @@
+name = "portfolio"
+
+pages_build_output_dir = "dist/portfolio/browser"
+
+compatibility_date = "2026-07-09"
