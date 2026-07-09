@@ -1,10 +1,10 @@
 export const portfolioTheme = {
   colors: {
-    background: '#09090B',
-    surface: '#111827',
-    primary: '#3B82F6',
-    accent: '#8B5CF6',
-    success: '#22C55E'
+    background: '#0C0C0A',
+    surface: '#1A1917',
+    primary: '#10B981',
+    accent: '#F59E0B',
+    success: '#34D399'
   },
   typography: {
     body: 'Inter',

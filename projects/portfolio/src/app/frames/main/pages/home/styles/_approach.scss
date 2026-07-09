@@ -23,7 +23,7 @@
 }
 
 .journey::after {
-  background: linear-gradient(90deg, var(--awp-primary), var(--awp-success));
+  background: linear-gradient(90deg, var(--awp-primary), var(--awp-accent));
   animation: line-grow 1.1s ease both;
 }
 
